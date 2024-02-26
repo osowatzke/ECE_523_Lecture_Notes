@@ -1,0 +1,122 @@
+\documentclass[fleqn]{article}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath, bm}
+\usepackage{amssymb}
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+	
+\title{Vector Algebra}
+\author{}
+\date{}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	\section{Notation}
+		
+	Scalar: $x$
+
+	Column Vector: $\mathbf{x} = \begin{bmatrix}x_1 & x_2 & \cdots & x_n \end{bmatrix}^T$
+		
+	Matrix ($m \times n$):
+		
+	\begin{equation*}
+		\mathbf{A} = \begin{bmatrix}
+			a_{11} & a_{12} & \cdots & a_{1n}\\
+			a_{21} & a_{22} & \cdots & a_{2n}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{m1} & a_{m2} & \cdots & a_{mn}
+		\end{bmatrix}
+	\end{equation*}
+		
+	\begin{equation*}
+		\text{Symmetric Matrix} \Leftrightarrow \mathbf{A}^T = \mathbf{A}
+	\end{equation*}
+			
+	\begin{equation*}\
+		\mathbf{A}^{\dag} = \text{Conjugate Tranpose of } \mathbf{A}
+	\end{equation*}
+	
+	\section{Linear Independence}
+	
+	$\{\mathbf{x_1}, \mathbf{x_2},...,\mathbf{x_M}\}$ is a set of linearly independent vector provided
+	
+	\begin{equation*}
+		a_1\mathbf{x_1} + a_2\mathbf{x_2} + \cdots + a_M\mathbf{x_M} = \mathbf{0} \Rightarrow a_1 = 0 = a_2 = \cdots = a_M 
+	\end{equation*}
+	
+	From a set of $M$ linearly independent vectors, we can always construct $M$ orthonormal vectors.
+	
+	orthonormality $\Rightarrow$
+	
+	\begin{equation*}
+		\langle \mathbf{x_i}, \mathbf{x_j} \rangle = \mathbf{x_i}^{\dag}\mathbf{x_j} = \delta_{ij} = \begin{cases}
+			0 & \text{if}\ i \neq j \\
+			1 & \text{if}\ i = j
+		\end{cases}
+	\end{equation*}
+	
+	\begin{equation*}
+		\langle \mathbf{x_i}, \mathbf{x_j} \rangle = \text{Inner Product}
+	\end{equation*}
+		
+	\begin{equation*}
+		\langle \mathbf{x_i}, \mathbf{x_i} \rangle = \mathbf{x_i}^{\dag}\mathbf{x_i} = \text{Squared Norm of } \mathbf{x_i}
+	\end{equation*}
+	
+	\begin{equation*}
+		\text{Outer Product} = \rangle \mathbf{x}, \mathbf{y} \langle = \mathbf{x}\mathbf{y}^{\dag} \quad \text{(a Matrix)}
+	\end{equation*}
+	
+	\section{Matrices}
+	
+	Matrix Multiplication
+	
+	Determinant of $\mathbf{A} = \text{Det}(\mathbf{A}) = |\mathbf{A}|$
+	
+	Matrix inverse $\mathbf{A}^{-1}$ exists if we have $\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}$\quad (Identity Matrix)
+	
+	Determinant of $\mathbf{A} = 0 \Leftrightarrow \mathbf{A}$ is singular or non-invertible.
+	
+	An eigenvalue and eigenvector of an $n \times n$ matrix $\mathbf{A}$ satisfies
+	
+	\begin{equation*}
+		\mathbf{A}\mathbf{{\Phi}_i} = {\lambda}_i\mathbf{{\Phi}_i},\quad i = 1,2,...,n
+	\end{equation*}
+	
+	we can also find eigenvalues by solving the n-th order polynomial equation
+	
+	\begin{equation*}
+		\text{det}(\mathbf{A} - \lambda\mathbf{I}) = 0\quad\text{for its n roots}
+	\end{equation*}
+	
+	\begin{equation*}
+		\text{Det of }\mathbf{A} = \prod_{i=1}^{n}{\lambda_i}
+	\end{equation*}
+	
+	\begin{equation*}
+		\text{Det of }\mathbf{A} = 0 \Leftrightarrow \text{At least one of }\lambda_i\text{ is zero}
+	\end{equation*}
+	
+	\begin{equation*}
+		\text{Trace of }\mathbf{A} \overset{\Delta}{=} \sum_{i=1}^{n}a_{ii} = \sum_{i=1}^{n}\lambda_i
+	\end{equation*}
+	
+	Rank of a matrix $ = $ \# of nonzero $\lambda_i$'s.
+	
+	If $\mathbf{A}$ is symmetric, then $\lambda_i$'s are real.
+	
+	If $\mathbf{A}$ is symmetric and $\lambda_i \neq \lambda_j$, then $\mathbf{\Phi_i}^{\dag}\mathbf{\Phi_j} = 0$. Since eigenvectors can always be normalized to have unit norm, the eigenvectors of a $n \times n$ symmetric matrix $\mathbf{A}$ can form an \underline{orthornormal} basis set for n-dimensional vector space.
+	
+	condition number $ = \lambda_{\text{max}}/\lambda_{\text{min}}$
+\end{document}
