@@ -264,5 +264,53 @@
 	$\therefore \mathbf{DR\hat{x}} = \mathbf{Q}^T\mathbf{b}$ or $\mathbf{R\hat{x}} = \mathbf{D}^{-1}\mathbf{Q}^T\mathbf{b}$
 	
 	Since $\mathbf{R}$ is an upper triangular matrix, $\mathbf{\hat{x}}$ is obtained via back-substitution.
-		
+	
+	\section{Diagonalization}
+	
+	Suppose $\mathbf{A}$ is an $n \times n$ invertible matrix with eigenvalues $\lambda_i$ and eigenvectors $\mathbf{\Phi_i}$, $i = 1,2,...,N$. Let us assume that all eigenvalues are distinct and that $\mathbf{A}$ is symmetric. Then
+	
+	\begin{equation*}
+		\mathbf{\Phi_i}^{\dag}\mathbf{\Phi_j} = \delta_{ij} = \begin{cases}
+			1 & \text{if}\ i = j\\
+			0 & \text{if}\ i \neq j
+		\end{cases}
+	\end{equation*}
+	
+	also $\mathbf{A\Phi_i} = \lambda_i\mathbf{\Phi_i}$, $i = 1,2,...,n$
+	
+	\underline{Modal Matrix}
+	
+	Let $\mathbf{\Phi} = \begin{bmatrix}\mathbf{\Phi_1} & \mathbf{\Phi_2} & \cdots & \mathbf{\Phi_n}\end{bmatrix}$
+	
+	Note $\mathbf{\Phi}^{\dag}\mathbf{\Phi} = \mathbf{I} \Rightarrow \mathbf{\Phi}^{-1} = \mathbf{\Phi}^{\dag}$
+	
+	$\therefore \mathbf{\Phi}\mathbf{\Phi}^{\dag} = \mathbf{I}$
+	
+	\begin{equation*}
+		\mathbf{A\Phi} = \begin{bmatrix}
+			\lambda_1\mathbf{\Phi_1} &
+			\lambda_2\mathbf{\Phi_2} &
+			\cdots &
+			\lambda_n\mathbf{\Phi_n}
+		\end{bmatrix} = \begin{bmatrix}
+			\mathbf{\Phi_1} & \cdots & \mathbf{\Phi_n}
+		\end{bmatrix}\begin{bmatrix}
+			\lambda_1 & 0 & \cdots & 0\\
+			0 & \lambda_2 & \cdots & 0\\
+			\vdots & \vdots & \ddots & \vdots\\
+			0 & 0 & \cdots & \lambda_n
+		\end{bmatrix}
+	\end{equation*}
+	
+	$\therefore \mathbf{A\Phi} = \mathbf{\Phi\Delta}$
+	
+	$\Rightarrow \mathbf{A} = \mathbf{\Phi\Delta}\mathbf{\Phi}^{\dag}$ and $\mathbf{\Delta} = \mathbf{\Phi}^{\dag}\mathbf{A\Phi}$
+	
+	Spectral decomposition theorem
+	
+	\begin{equation*}
+		\mathbf{A} = \mathbf{\Phi\Delta}\mathbf{\Phi}^{\dag} = \sum_{i=1}^{n}\lambda_i\mathbf{\Phi_i}\mathbf{\Phi_i}^{\dag}
+	\end{equation*}
+	
+	Diagonalization is useful in separating the dependencies of random variables. This is useful in evaluating error probabilities.
 \end{document}
