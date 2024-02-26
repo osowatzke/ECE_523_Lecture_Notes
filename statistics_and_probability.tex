@@ -67,4 +67,50 @@
 	\begin{equation*}
 		E\{x^n\} = (-j)^n\cdot\left.\frac{d^nQ_x(u)}{du^n}\right\vert_{u=0}
 	\end{equation*}
+	
+	The \underline{joint CDF} of two random variables $X$ and $Y$ is
+	
+	$F_{X,Y}(a,b) = \text{Pr}\{X \leq a, Y \leq b\}$
+	
+	The \underline{joint pdf} is defined according to
+	
+	\begin{equation*}
+		p_{X,Y}(x,y) \overset{\Delta}{=} \frac{\partial^2F_{X,Y}(x,y)}{\partial{x}\partial{y}}
+	\end{equation*}
+	
+	The \underline{marginal pdfs} are given by
+	
+	\begin{equation*}
+		p_X(x) = \int_{-\infty}^{\infty}p_{X,Y}(x,y)dy
+	\end{equation*}
+	
+	\begin{equation*}
+		p_Y(y) = \int_{-\infty}^{\infty}p_{X,Y}(x,y)dx
+	\end{equation*}
+	
+	Two random variables are said to be \underline{statistically independent} if
+	
+	$p_{X,Y}(x,y) = p_X(x)p_Y(y)$
+	
+	Two random variabels are said to be \underline{uncorrelated} if
+	
+	$E\{XY\} = E\{X\}E\{Y\}$
+	
+	Note that statistical independence implies uncorrelatedness, but the converse is not generally true. (For Guassian random variables, statistical independence and uncorrelatedness are equivalent).
+	
+	$\text{COV}(X,Y) \overset{\Delta}{=} E\{(X-E[X])(Y-E[Y]) \} = E\{XY\} - E\{X\}E\{Y\}$
+	
+	The correlation coefficient $\rho$ betweeen $X$ and $Y$ is defined as
+	
+	\begin{equation*}
+		\rho_{X,Y} \overset{\Delta}{=} \frac{\text{COV}(X,Y)}{\sigma_X\cdot\sigma_Y}
+	\end{equation*}
+	
+	It can be shown that $-1 \leq \rho \leq 1$
+	
+	$\rho = +1$ implies a strong positive correlation between the two random variables.
+	
+	$\rho = 0$ implies no correlation
+	
+	$\rho = -1$ implies a strong negative correlation	
 \end{document}
