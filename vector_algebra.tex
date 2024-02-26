@@ -234,4 +234,35 @@
 	Note: $\mathbf{A}^{\dag}\mathbf{A} = \mathbf{I}$, but $\mathbf{A}\mathbf{A}^{\dag} \neq \mathbf{I}$
 	
 	If $\mathbf{A}$ is invertible, $\mathbf{A}^{\dag} = \mathbf{A}^{-1}\left(\mathbf{A}^T\right)^{-1}\mathbf{A}^T = \mathbf{A}^{-1}$
+	
+	\section{Practical Solution of Least Squares}
+	
+	The condition \# of ($\mathbf{A}^T\mathbf{A}$) is the square of the condition \# of $\mathbf{A}$. It is verify difficult to invert $\mathbf{A}^T\mathbf{A}$ sometimes.
+	
+	Use QR decomposition instead. Let $m > n$
+	
+	\begin{equation*}
+		\mathbf{A} = \mathbf{Q}\mathbf{R}
+	\end{equation*}
+	
+	where $\mathbf{A}$ is $m \times n$, $\mathbf{Q}$ is $m \times n$, and $\mathbf{R}$ is $n \times n$.
+	
+	$\mathbf{Q}^T\mathbf{Q} = \mathbf{D}$ Diagonal matrix with nonzero elements
+	
+	$\mathbf{R} = n \times n$ upper triangular matrix.
+	
+	$r_{kk} = 1$ for all $k$; $\therefore \mathbf{R}^{-1}$ exists.
+	
+	Least squares solution $\Rightarrow \mathbf{A}^T\mathbf{A\hat{x}} = \mathbf{A}^T\mathbf{b}$ or $\mathbf{A}^T(\mathbf{A\hat{x}} - \mathbf{b}) = \mathbf{0}$
+	
+	$\therefore \mathbf{R}^T\mathbf{Q}^T(\mathbf{A\hat{x}} - \mathbf{b}) = \mathbf{0}$
+	
+	But $\mathbf{R}$ is invertible $\Rightarrow \mathbf{Q}^T(\mathbf{A\hat{x}} - \mathbf{b}) = \mathbf{0}$
+	
+	$\mathbf{Q}^T\mathbf{A} = \mathbf{Q}^T\mathbf{QR} = \mathbf{DR}$
+	
+	$\therefore \mathbf{DR\hat{x}} = \mathbf{Q}^T\mathbf{b}$ or $\mathbf{R\hat{x}} = \mathbf{D}^{-1}\mathbf{Q}^T\mathbf{b}$
+	
+	Since $\mathbf{R}$ is an upper triangular matrix, $\mathbf{\hat{x}}$ is obtained via back-substitution.
+		
 \end{document}
