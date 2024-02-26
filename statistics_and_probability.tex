@@ -1,0 +1,70 @@
+\documentclass[fleqn]{article}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath, bm}
+\usepackage{amssymb}
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+	
+\title{Statistics and Probability}
+\author{}
+\date{}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	A \underline{continuous random variable} $x$ can take on a continuum of values over some interval $(a,b)$ or over sets of intervals.
+	
+	The \underline{cummulative distribution function} (CDF) of a random variable $x$ is defined as
+	
+	\begin{equation*}
+		F_X(a) \overset{\Delta}{=} \text{Probability}\{x \leq a\}
+	\end{equation*}
+	
+	$F(a)$ is non-decreasing, $F(-\infty) = 0, F(\infty) = 1$
+	
+	The \underline{probability density function} (pdf) of a continuous random variable is defined as
+	
+	\begin{equation*}
+		p(x) \overset{\Delta}{=} \frac{dF(x)}{dx}
+	\end{equation*}
+	
+	$p(x) \geq 0$ and $\int_{-\infty}^{\infty}p(x)dx = 1$
+	
+	For the discrete random variable, we can use the probability mass function instead of the pdf.
+	
+	Let $X$ be a random variable with pdf $p_X(x)$. Let $Y = h(X)$. Then, the pdf of $Y$ is given by
+	
+	\begin{equation*}
+		p_Y(y) = p_X(x) \cdot \left|\frac{dx}{dy}\right|
+	\end{equation*}
+	
+	Expected value of $g(x) = E\{g(x)\} \overset{\Delta}{=}\int_{-\infty}^{\infty}g(x)p_X(x)dx$
+	
+	Mean $ = E\{x\} = \int_{-\infty}^{\infty}{xp_X(x)dx}$
+	
+	Variance $\sigma_X^2 = E\{x^2\} - E^2\{x\}$
+	
+	A continuous random variable can also be completely characterized by its \newline \underline{characteristic function}.
+	
+	\begin{equation*}
+		Q_X(u) \overset{\Delta}{=} E\{e^{jux}\} = \int_{-\infty}^{\infty}{e^{jux}p_X(x)dx}
+	\end{equation*}
+	
+	\begin{equation*}
+		\therefore p_X(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}{Q_x(u)e^{-jux}du}
+	\end{equation*}
+	
+	\begin{equation*}
+		E\{x^n\} = (-j)^n\cdot\left.\frac{d^nQ_x(u)}{du^n}\right\vert_{u=0}
+	\end{equation*}
+\end{document}
