@@ -217,5 +217,27 @@
 	
 	$p(y|x) = \text{conditional probability}$
 	
-	$p(x|y) = \text{"a posteriori" probability}$ 
+	$p(x|y) = \text{"a posteriori" probability}$
+	
+	We provide a few examples of \underline{univariate} random variables below.
+	
+	\begin{enumerate}
+		\item[(1)] \underline{Poisson:} The discrete random variable $n$ takes on integer values \newline $0,1,2,...,k,...$ till $\infty$
+		
+		\begin{equation*}
+			\text{Pr}(n = k) = \frac{\lambda^k e^{-\lambda}}{k!},\quad\lambda > 0
+		\end{equation*}
+		
+		$E\{n\} = \lambda$ and $\text{var}\{n\} = \lambda$
+		
+		\item[(2)] \underline{Binomial:} The discrete random variable $n$ takes on integer values \newline $0,1,2,...,N$.
+		
+		\begin{equation*}
+			\text{Pr}(n = k) = \frac{N!}{k!(N-k)!}\theta^k(1 - \theta)^{(N - k)}, \quad k = 0,1,...,N
+		\end{equation*}
+		
+		where $\theta$ is a parameter.
+		
+		$E\{n\} = N\theta$ and $\text{var}\{n\} = N\theta(1-\theta)$
+	\end{enumerate}
 \end{document}
