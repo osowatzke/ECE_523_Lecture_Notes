@@ -346,4 +346,22 @@
 		
 		\item[(4)] Stop when $\mathbf{x^n}$ is relatively stable.
 	\end{enumerate}
+	
+	\underline{Iterative Solution to the Least Squares Problem}
+	
+	$\mathbf{Ax} = \mathbf{b}$
+	
+	Least square solution of $\mathbf{x} = \mathbf{A}^{\dag}\mathbf{b} = (\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T\mathbf{b}$
+	
+	\underline{Iterative Solution}
+	
+	Minimize $J(\mathbf{x}) = (\mathbf{Ax} - \mathbf{b})^T(\mathbf{Ax} - \mathbf{b}) = \mathbf{x}^T\mathbf{A}^T\mathbf{A}\mathbf{x} - 2\mathbf{b}^T\mathbf{Ax}+ \mathbf{b}^T\mathbf{b}$
+
+	$\nabla_{\mathbf{x}}J(\mathbf{x}) = 2\mathbf{A}^T\mathbf{Ax} - 2\mathbf{A}^T\mathbf{b}$
+	
+	$\therefore \mathbf{x}^{n+1} = \mathbf{x}^n - k(n)\{2\mathbf{A}^T\mathbf{A}\mathbf{x}^{n} - 2\mathbf{A}^T\mathbf{b}\}$
+	
+	Can vary $k(n)$ with step
+	
+	Look at the example in Appendix 4.
 \end{document}
