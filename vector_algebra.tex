@@ -133,4 +133,29 @@
 	Negative Definite $\Leftrightarrow \lambda_i < 0$
 	
 	Negative Semi-Definite $\Leftrightarrow \lambda_i \leq 0$
+	\section{Vector Calculus}
+	
+	A scalar function $f(\cdot)$ of n variables $x_1,x_2,...,x_n$.
+	
+	$f(x_1,x_2,...,x_n) = f(\mathbf{x})$.
+	
+	\begin{equation*}
+		\nabla_{\mathbf{x}}f = \frac{\delta f(\mathbf{x})}{\delta\mathbf{x}} = \begin{bmatrix}
+			\frac{\delta f(\mathbf{x})}{\delta{x_1}} \\
+			\vdots \\
+			\frac{\delta f(\mathbf{x})}{\delta{x_n}}
+		\end{bmatrix}
+	\end{equation*}
+	
+	A vector function $\mathbf{f}(x_1,x_2,...,x_n) = \mathbf{f}(\mathbf{x})$ where $\mathbf{f}$ is $m \times 1$ and $\mathbf{x}$ is $n \times 1$
+	
+	\begin{equation*}
+		\frac{\delta\mathbf{f}(\mathbf{x})}{\delta\mathbf{x}} = \begin{bmatrix}
+			\frac{\delta{f_1}}{\delta{x_1}} & \frac{\delta{f_1}}{\delta{x_2}} & \cdots & \frac{\delta{f_1}}{\delta{x_n}} \\
+			\vdots & \vdots & \ddots & \vdots \\
+			\frac{\delta{f_m}}{\delta{x_1}} & \frac{\delta{f_m}}{\delta{x_2}} & \cdots & \frac{\delta{f_m}}{\delta{x_n}}
+		\end{bmatrix}
+	\end{equation*}
+	
+	
 \end{document}
