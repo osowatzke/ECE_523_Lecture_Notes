@@ -137,4 +137,53 @@
 	$\mathbf{\Sigma} \overset{\Delta}{=} E\{(\mathbf{x} - \boldsymbol{\mu})(\mathbf{x} - \boldsymbol{\mu})^T\} = E\{\mathbf{X}\mathbf{X}^T\} - \boldsymbol{\mu}\boldsymbol{\mu}^T$
 	
 	Note that $\mathbf{\Sigma}$ is a $N \times N$ square, \underline{symmetric} matrix. In addition, it can be shown that $\mathbf{\Sigma}$ is a \underline{positive definite} matrix.
+	
+	When the $N$ random variables represented by $\mathbf{X}$ are statistically independent, $\mathbf{\Sigma}$ is a \underline{diagonal} matrix with the diagonal terms indicating the variances of the individual random variables.
+	
+	Let $Y_1, Y_2,...,Y_M$ be the random variables obtained from $X_1,X_2,...,X_N$ through the following \underline{linear} transformation.
+	
+	\begin{equation*}
+		\begin{aligned}
+			Y_1 &= a_{11}X_1 + a_{12}X_2 + \cdots + a_{1N}X_N \\
+			Y_2 &= a_{21}X_1 + a_{22}X_2 + \cdots + a_{2N}X_N \\
+			&\vdots \\
+			Y_M &= a_{M1}X_1 + a_{M2}X_2 + \cdots + a_{MN}X_N
+		\end{aligned}
+	\end{equation*}
+	
+	Above linear relations can be expressed compactly using matrix notation as
+	
+	$\mathbf{Y} = \mathbf{AX}$
+	
+	where $\mathbf{X}$ is N-element column vector as defined before, $\mathbf{Y} = \begin{bmatrix}Y_1,Y_2,...,Y_M\end{bmatrix}^T$ is an M-element column vector and $\mathbf{A}$ is a $M \times N$ matrix with
+	
+	$A_{ij} = a_{ij}$, $1 \leq i \leq M$, $1 \leq j \leq N$
+	
+	as its i,jth element
+	
+	Then $\mathbf{\boldsymbol{\mu}_Y} = E\{\mathbf{Y}\} = \mathbf{A}E\{\mathbf{X}\} = \mathbf{A}\mathbf{\boldsymbol{\mu}_X}$
+	
+	$\mathbf{\Sigma_Y} = E\{(\mathbf{Y} - \mathbf{\boldsymbol{\mu}_Y})(\mathbf{Y} - \mathbf{\boldsymbol{\mu}_Y})^T\} = \mathbf{A}\mathbf{\Sigma_X}\mathbf{A}^T$
+	
+	This vector notation is very convenient when dealing with multiple random variables.
+	
+	Let $A$ and $B$ be two events with individual probabilities $P(A)$ and $P(B)$. Let $P(AB)$ denote the probability of the intersection of $A$ and $B$. Then the conditional probabilities are defined as
+	
+	\begin{equation*}
+		P(A|B) \left[\text{This is read as "Probability of A given B"}\right]
+	\end{equation*}
+	
+	\begin{equation*}
+		= \frac{P(AB)}{P(B)}
+	\end{equation*}
+	
+	Similarly
+	
+	\begin{equation*}
+		P(B|A) = \frac{P(AB)}{P(A)}
+	\end{equation*}
+	
+	If the events $A$ and $B$ are statistically independent, $P(A|B) = P(A)$ and $P(B|A) = P(B)$.
+	
+	This is known as \underline{Bayes theorem} and is of great significance in pattern recognition.
 \end{document}
