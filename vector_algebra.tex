@@ -325,4 +325,25 @@
 	$\mathbf{Qv_i} = \lambda_i\mathbf{Pv_i}$
 	
 	where $\lambda_i$ is a generalized eigenvector and $\mathbf{v_i}$ is a generalized eigenvector.
+	
+	\section{Steepest Descent Procedures}
+	
+	Let $f(\mathbf{x})$ be a scalar function of vector $\mathbf{x}$. Suppose we want to find the $\mathbf{x}$ that minimizes $f(\mathbf{x})$. Steepest descent method is:
+	
+	\begin{enumerate}
+	
+		\item[(1)] start with an initial given $\mathbf{x^0}$
+		
+		\item[(2)] compute the gradient at $\mathbf{x^0}$, i.e., $\frac{df(\mathbf{x^0})}{d\mathbf{x}}$
+		
+		\item[(3)] Determine $\mathbf{x^1}$ where
+		
+		\begin{equation*}
+			\mathbf{x^1} = \mathbf{x^0} - k\left[\frac{df(\mathbf{x^0})}{d\mathbf{x}}\right]
+		\end{equation*}
+		
+		and $k$ is the step size.
+		
+		\item[(4)] Stop when $\mathbf{x^n}$ is relatively stable.
+	\end{enumerate}
 \end{document}
