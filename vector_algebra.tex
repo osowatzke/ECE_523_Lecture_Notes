@@ -216,4 +216,22 @@
 	where $\mathbf{e} = (\mathbf{A\hat{x}} - \mathbf{b})$
 	
 	$\therefore J = (\mathbf{A\hat{x}} - \mathbf{b})^T(\mathbf{A\hat{x}} - \mathbf{b}) = \mathbf{\hat{x}}^T\mathbf{A}^T\mathbf{A}\mathbf{\hat{x}} - 2\mathbf{b}^T\mathbf{A\hat{x}} + \mathbf{b}^T\mathbf{b}$
+	
+	$\mathbf{A}^T\mathbf{A}$ is symmetric so
+	
+	\begin{equation*}
+		\nabla_{\mathbf{\hat{x}}}J = 2\mathbf{A}^T\mathbf{A\hat{x}} - 2\mathbf{A}^T\mathbf{b} = \mathbf{0}
+	\end{equation*}
+	
+	\begin{equation*}
+		\Rightarrow \mathbf{\hat{x}_{LS}} = (\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T\mathbf{b} = \mathbf{A}^{\dag}\mathbf{b}
+	\end{equation*}
+	
+	\begin{equation*}
+		\mathbf{A}^{\dag} = (\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T = \text{Pseudo inverse}
+	\end{equation*}
+	
+	Note: $\mathbf{A}^{\dag}\mathbf{A} = \mathbf{I}$, but $\mathbf{A}\mathbf{A}^{\dag} \neq \mathbf{I}$
+	
+	If $\mathbf{A}$ is invertible, $\mathbf{A}^{\dag} = \mathbf{A}^{-1}\left(\mathbf{A}^T\right)^{-1}\mathbf{A}^T = \mathbf{A}^{-1}$
 \end{document}
