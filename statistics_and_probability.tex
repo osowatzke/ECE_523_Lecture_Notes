@@ -113,4 +113,28 @@
 	$\rho = 0$ implies no correlation
 	
 	$\rho = -1$ implies a strong negative correlation	
+	
+	For $N$ random variables $X_1, X_2,...,X_N$, we have statistical independence if
+	
+	\begin{equation*}
+		p_{X_1, X_2,...,X_N}(x_1,x_2,...,x_N) = \prod_{j=1}^{N}p_{X_j}(x_j)
+	\end{equation*}
+	
+	we can represent $N$ random variables compactly using a \underline{single} column vector
+	
+	\begin{equation*}
+		\mathbf{X} = \begin{bmatrix} X_1, X_2,... ,X_N\end{bmatrix}^T
+	\end{equation*}
+	
+	Then $p_\mathbf{X}(\mathbf{x})$ is a \underline{scalar} valued function of the vector $\mathbf{x}$ denoting the N-variate pdf of the $N$ random variables.
+	
+	The \underline{mean vector} of the random variable $\mathbf{X}$ is defined according to
+	
+	$\boldsymbol{\mu} = E\{\mathbf{x}\} \overset{\Delta}{=} \begin{bmatrix}E\{x_1\},E\{x_2\},...,E\{x_N\}\end{bmatrix}^T$
+	
+	Similarly, the \underline{covariance matrix} $\mathbf{\Sigma}$ is defined as
+	
+	$\mathbf{\Sigma} \overset{\Delta}{=} E\{(\mathbf{x} - \boldsymbol{\mu})(\mathbf{x} - \boldsymbol{\mu})^T\} = E\{\mathbf{X}\mathbf{X}^T\} - \boldsymbol{\mu}\boldsymbol{\mu}^T$
+	
+	Note that $\mathbf{\Sigma}$ is a $N \times N$ square, \underline{symmetric} matrix. In addition, it can be shown that $\mathbf{\Sigma}$ is a \underline{positive definite} matrix.
 \end{document}
