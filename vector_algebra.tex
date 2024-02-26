@@ -198,4 +198,22 @@
 	\begin{equation*}
 		\mathbf{f}(\mathbf{x_0}) = \mathbf{f}(\mathbf{x_0}) + \left[\frac{d\mathbf{f}(\mathbf{x_0})}{d\mathbf{x}}\right](\mathbf{x} - \mathbf{x_0}) + \text{higher order terms}
 	\end{equation*}
+	
+	\section{Least Squares Method}
+	
+	Suppose we have a system of linear equations where
+	
+	$\mathbf{Ax} = \mathbf{b}$
+	
+	where $\mathbf{A}$ is $m \times n$, $\mathbf{x}$ is $n \times 1$, and $\mathbf{b}$ is $m \times 1$
+	
+	Assume $m > n$ and rank of $\mathbf{A} = n$
+	
+	$\therefore$ we have more equations than unknowns. This is an overdetermined system.
+	
+	Least squares solution for $\mathbf{x}$ involves minimizing $J = \mathbf{e}^T\mathbf{e}$\quad (Squared Error)
+	
+	where $\mathbf{e} = (\mathbf{A\hat{x}} - \mathbf{b})$
+	
+	$\therefore J = (\mathbf{A\hat{x}} - \mathbf{b})^T(\mathbf{A\hat{x}} - \mathbf{b}) = \mathbf{\hat{x}}^T\mathbf{A}^T\mathbf{A}\mathbf{\hat{x}} - 2\mathbf{b}^T\mathbf{A\hat{x}} + \mathbf{b}^T\mathbf{b}$
 \end{document}
