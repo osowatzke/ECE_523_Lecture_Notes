@@ -180,4 +180,22 @@
 	\begin{equation*}
 		\frac{d}{d\mathbf{x}}(\mathbf{x}^T\mathbf{Ax}) = 2\mathbf{Ax}
 	\end{equation*}
+	
+	\section{Taylor Series Expansion}
+	
+	\subsection{Scalar function}
+	
+	\begin{equation*}
+		f(\mathbf{x}) = f(\mathbf{x_0}) + \left[\frac{df(\mathbf{x_0})}{d\mathbf{x}}\right]^T(\mathbf{x} - \mathbf{x_0}) + \frac{1}{2}(\mathbf{x}-\mathbf{x_0})^T\left[\frac{d^2f(\mathbf{x_0})}{d\mathbf{x}^2}\right](\mathbf{x} - \mathbf{x_0}) 
+	\end{equation*}
+	
+	\begin{equation*}
+		+ \text{higher order terms}
+	\end{equation*}
+	
+	\subsection{Vector function}
+	
+	\begin{equation*}
+		\mathbf{f}(\mathbf{x_0}) = \mathbf{f}(\mathbf{x_0}) + \left[\frac{d\mathbf{f}(\mathbf{x_0})}{d\mathbf{x}}\right](\mathbf{x} - \mathbf{x_0}) + \text{higher order terms}
+	\end{equation*}
 \end{document}
