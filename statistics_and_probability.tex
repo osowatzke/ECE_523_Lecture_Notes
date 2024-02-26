@@ -2,6 +2,8 @@
 \usepackage[nodisplayskipstretch]{setspace}
 \usepackage{amsmath, nccmath, bm}
 \usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
 
 \newcommand{\zerodisplayskip}{
 	\setlength{\abovedisplayskip}{0pt}%
@@ -186,4 +188,34 @@
 	If the events $A$ and $B$ are statistically independent, $P(A|B) = P(A)$ and $P(B|A) = P(B)$.
 	
 	This is known as \underline{Bayes theorem} and is of great significance in pattern recognition.
+	
+	\begin{figure}[H]
+		\centerline{\fbox{\includegraphics[width=0.9\textwidth]{bayes_rule.png}}}
+		\caption{Bayes' Rule in Pictures}
+		\label{bayes_rule}
+	\end{figure}
+	
+	Let $X$ and $Y$ denote two continuous random variables. Then, the \newline \underline{conditional pdf} $p_{X|Y}(x|y)$ of $x$ given $y$ is
+	
+	\begin{equation*}
+		p_{X|Y}(x|y) = \frac{p_{X,Y}(x,y)}{p_Y(y)}
+	\end{equation*}
+	
+	Above important theorem can be stated in many different ways. We suppress the subscripts for convenience.
+	
+	\begin{equation*}
+		p(x|y) = \frac{p(x,y)}{p(y)},\quad p(y|x) = \frac{p(x,y)}{p(x)}
+	\end{equation*}
+	
+	\begin{equation*}
+		\therefore p(x|y) = \frac{p(x,y)}{p(y)} = \frac{p(y|x)p(x)}{p(y)} = \frac{p(x)p(y|x)}{\int_{-\infty}^{\infty}{p(x)p(y|x)dx}}
+	\end{equation*}
+	
+	If random variable $x$ is being determined by observing the random variable $y$, we use the notation:
+	
+	$p(x) = \text{"a priori" probability}$
+	
+	$p(y|x) = \text{conditional probability}$
+	
+	$p(x|y) = \text{"a posteriori" probability}$ 
 \end{document}
