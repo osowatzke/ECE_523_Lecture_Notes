@@ -313,4 +313,16 @@
 	\end{equation*}
 	
 	Diagonalization is useful in separating the dependencies of random variables. This is useful in evaluating error probabilities.
+	
+	\section{Simultaneous Diagonalization}
+	
+	$\mathbf{P}$ and $\mathbf{Q}$ are $n \times n$ real symmetric matrices. $\mathbf{P}$ is positive definite. Then we can find a $\mathbf{V}$ such that
+	
+	$\mathbf{V}^T\mathbf{PV} = \mathbf{I}$ and $\mathbf{V}^T\mathbf{QV} = \mathbf{\Delta} = \text{Diag}(\lambda_1,...,\lambda_n)$
+	
+	These eigenvalues $\lambda_i$ satisfy
+	
+	$\mathbf{Qv_i} = \lambda_i\mathbf{Pv_i}$
+	
+	where $\lambda_i$ is a generalized eigenvector and $\mathbf{v_i}$ is a generalized eigenvector.
 \end{document}
