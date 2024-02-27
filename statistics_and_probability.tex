@@ -352,6 +352,73 @@
 		The sum of squares of $N$ \underline{independent}, zero mean Gaussian variables with unit variance results in a chi-squared random variable with $N$ degrees of freedom
 		
 		Note also that if $x$ is a chi-squared random variable with $\beta$ degrees of freedom, then $(x/2)$ is a gamma random variable with the parameter \newline $c = (\beta/2)$.
-
+		
 	\end{enumerate}
+		
+	Two continuous random variables $x$ and $y$ are \underline{bivariate Gaussian} if their join pdf is as below.
+		
+	\begin{equation*}
+		p(x,y) = \frac{1}{2\pi\sigma_x\sigma_y\sqrt{1-\rho^2}} \cdot
+	\end{equation*}
+
+	\begin{equation*}
+		\text{exp}\left\{-\frac{1}{2(1-\rho^2)}\left[\frac{(x-\mu_x)^2}{\sigma_x^2} - \frac{2\rho(x - \mu_x)(y - \mu_y)}{\sigma_x\sigma_y} + \frac{(y - \mu_y)^2}{\sigma_y^2}\right]\right\}
+	\end{equation*}
+		
+	$E\{x\} = \mu_x$, $E\{y\} = \mu_y$, $\text{var}\{x\} = \sigma_x^2$, $\text{var}\{y\} = \sigma_y^2$ and $\rho$ is the \newline \underline{correlation coefficient} between $x$ and $y$
+		
+	Note that for $\rho = 0$, we can write $p(x,y)$ as the product of $p(x)$ and $p(y)$ indicating statistical independence.
+		
+	For jointly Guassian random variables,
+		
+	$\text{uncorrelatedness} \Leftrightarrow \text{statistical independence}$
+		
+	$\text{Pr}\left[x\ \text{and}\ y\ \text{have the same sign}\right] = \frac{1}{2} + \frac{1}{\pi}\sin^{-1}(\rho)$
+		
+	For the jointly Gaussian random variables $x$ and $y$, the conditional pdf $p(x|Y=y)$ is as below.
+		
+	\begin{equation*}
+		p(x|Y=y) = \mathcal{N}\left(\mu_x + \rho\frac{\sigma_x}{\sigma_y}(y - \mu_y), \sigma_x^2-\rho^2\sigma_x^2\right)
+	\end{equation*}
+		
+	Note that for $\rho = 0$, $p(x|Y=y)$ is simply $\mathcal{N}(\mu_x,\sigma_x^2)$
+		
+	Let $x_1, x_2, ..., x_N$ be a set of \underline{independent} random variables with arbitrary distributions, means $\mu_i$ and variances $\sigma_i^2$. Then form a new random variable $y_N$ given by
+		
+	\begin{equation*}
+		y_N = \frac{(x_1 + x_2 + \cdots + x_N) - (\mu_1 + \mu_2 + \cdots + \mu_N)}{\sqrt{\sigma_1^2 + \sigma_2^2 + \cdots + \sigma_N^2}}
+	\end{equation*}
+		
+	Then, under general conditions, the CDF of $y_N$ approaches the CDF of a unit Gaussian as $N$ goes to infinity (\underline{Central Limit Theorem}).
+		
+	The random variables $x_1,x_2,...,x_M$ are said to be \underline{jointly Gaussian} if their join pdf is given by
+		
+	\begin{equation*}
+		p(\mathbf{x}) = \frac{1}{\sqrt{(2\pi)^M|\mathbf{\Sigma_x}|}}\text{exp}\left\{-\frac{1}{2}(\mathbf{x} - \mathbf{\boldsymbol{\mu}_x})^T\mathbf{\Sigma_x}^{-1}(\mathbf{x} - \mathbf{\boldsymbol{\mu}_x})\right\}
+	\end{equation*}
+		
+	Here $E\{\mathbf{x}\} = \mathbf{\boldsymbol{\mu}_x}$ and $\text{cov}(\mathbf{x}) = \mathbf{\Sigma_x}$, $\mathbf{x} = \begin{bmatrix}x_1,x_2,...,x_M\end{bmatrix}^T$
+		
+	$|\cdot|$ denotes the determinant of the matrix.
+		
+	This M-variate Gaussian pdf is also denoted by $\mathcal{N}_M(\mathbf{\boldsymbol{\mu}_x},\mathbf{\Sigma_x})$ where the subscript denotes the number of random variables.
+		
+	If $\mathbf{Y} = \mathbf{Ax}$, then we can show that $\mathbf{Y}$ is also \underline{multivariate Gaussian} with
+		
+	$E\{\mathbf{Y}\} = \mathbf{A\boldsymbol{\mu}_x}$ and $\mathbf{\Sigma_y} = \mathbf{A\Sigma_x}\mathbf{A}^T$
+		
+	The multivariate Guassian is a very popular model because of the following features.
+		
+	\begin{enumerate}
+	
+		\item[(i)] Central limit theorem
+		
+		\item[(ii)] Linear transforms preserve the Gaussian nature
+		
+		\item[(iii)] Parameterized completely by $\boldsymbol{\mu}$ and $\mathbf{\Sigma}$.
+		
+		\item[(iv)] Conditional pdfs of components are also Gaussian. 
+		
+	\end{enumerate}
+	
 \end{document}
