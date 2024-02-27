@@ -239,5 +239,75 @@
 		where $\theta$ is a parameter.
 		
 		$E\{n\} = N\theta$ and $\text{var}\{n\} = N\theta(1-\theta)$
+		
+		\item[(3)] \underline{Uniform:} The continuous random variable $x$ is governed by
+		
+		\begin{equation*}
+			p(x) = \begin{cases}
+				\frac{1}{(b-a)} & \text{for}\ a \leq x \leq b\\
+				0 & \text{otherwise}
+			\end{cases}
+		\end{equation*}
+		
+		$E\{x\} = \left(\frac{a+b}{2}\right)$, the mid-point of the interval
+		
+		$var\{x\} = \frac{(b - a)^2}{12}$, one-twelfth of the square of the interval length.
+		
+		\item[(4)] \underline{Univariate Gaussian:} The continuous random variable $x$ has the following pdf.
+		
+		\begin{equation*}
+			p(x) = \frac{1}{\sqrt{2\pi{\sigma_x}^2}}\text{exp}\left[-\frac{1}{2}\frac{(x-\mu_x)^2}{{\sigma_x}^2}\right]
+		\end{equation*}
+		
+		$E\{x\} = \mu_x$ and $\text{var}\{x\} = {\sigma_x}^2$
+		
+		The univariate Guassian is \underline{completely} characterized by two parameters, namely, mean $\mu_x$ and variance ${\sigma_x}^2$
+		
+		For \underline{zero mean}, univariate Gaussian random variables, we can show the following.
+		
+		\begin{equation*}
+			E\{x^p\} = \begin{cases}
+				0 & \text{for odd}\ p\\
+				\frac{p!}{\left(\frac{p}{2}\right)!2^{(p/2)}}\sigma^p & \text{for even}\ p
+			\end{cases}
+		\end{equation*}
+			
+		A univariate Gaussian pdf with mean $\mu$ and variance $\sigma^2$ is often denoted by $\mathcal{N}(\mu,\sigma^2)$
+		
+		The \underline{error function} $\text{erfc}(x)$ is defined as
+		
+		\begin{equation*}
+			\text{erfc}(x) \overset{\Delta}{=} \frac{1}{\sqrt{2\pi}}\int_x^{\infty}{e^{-\frac{u^2}{2}}du}
+		\end{equation*}
+		
+		$\text{erfc}(-\infty) = 1$, $\text{erfc}(0) = \frac{1}{2}$, $\text{erfc}(\infty) = 0$, $\text{erfc}(x) = 1 - \text{erfc}(x)$
+		
+		You can evaluate the error function on your calculator very accurately using the following algorithm.
+		
+		$\text{erfc}(x) = F(t)e^{-(x^2/2)}$
+		
+		$t = 1/(1 + 0.2316419x)$
+		
+		$F(t) = t\{0.127414796 + t\{-0.142248368 + t\{0.710706871$
+		
+		$+ t\{-0.726576013 + 0.530702714t\}\}\}\}$
+		
+		You may have to find $x$ such that
+		
+		$\beta = \text{erfc}(x),\quad 0 < \beta < \frac{1}{2}$
+		
+		Then $x$ can be obtained iteratively as below.
+		
+		Let $x_0$ be a guess for starting value.
+		
+		$t_0 = 1/(1 + 0.2316419x_0)$
+		
+		Find a new $x$ value from $x_0$ as
+		
+		\begin{equation*}
+			x_1 = \left\{2\text{ln}\left[\frac{F(t_0)}{\beta}\right]\right\}^{1/2}
+		\end{equation*}
+		
+		where $F(t)$ is the polynomial above.
 	\end{enumerate}
 \end{document}
