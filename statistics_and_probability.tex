@@ -309,5 +309,49 @@
 		\end{equation*}
 		
 		where $F(t)$ is the polynomial above.
+		
+		\item[(5)] \underline{Rayleigh:} The continuous random variable $x$ is governed by the following pdf.
+		
+		\begin{equation*}
+			p(x) = \begin{cases}
+				\frac{x}{b^2}e^{-\frac{x^2}{2b^2}} & \text{for}\ x \geq 0\\
+				0 & \text{for} x < 0
+			\end{cases}
+		\end{equation*}
+		
+		\item[(6)] \underline{Gamma:} The continuous random variable $x$ is governed by the following pdf.
+		
+		\begin{equation*}
+			p(x) = \begin{cases}
+				\frac{1}{\Gamma(c)}x^{(c-1)}e^{-x} & \text{for}\ x \geq 0, c > 0\\
+				0 & \text{for}\ x < 0
+			\end{cases}
+		\end{equation*}
+		
+		where the \underline{Gamma function} $\Gamma(c)$ is defined by
+		
+		\begin{equation*}
+			\Gamma(c) \overset{\Delta}{=} \int_0^{\infty}x^{(c-1)}e^{-x}dx
+		\end{equation*}
+		
+		Fortunately, we can use the recursion that
+		
+		$\Gamma(c+1) = c\Gamma(c)$ along with $\Gamma(1) = 1$, $\Gamma(\frac{1}{2}) = \sqrt{\pi}$, and $\Gamma(n) = (n-1)!$
+		
+		\item[(7)] \underline{Chi-squared:} The continuous random variable $x$ is governed by the following pdf.
+		
+		\begin{equation*}
+			p(x) = \begin{cases}
+				\frac{1}{2^{\beta/2}\Gamma\left(\frac{\beta}{2}\right)}x^{\left(\frac{\beta}{2} - 1\right)}e^{-\frac{x}{2}} & \text{for}\ x \geq 0\\
+				0 & \text{for}\ x < 0
+			\end{cases}
+		\end{equation*}
+		
+		where $\beta$ is the \underline{number of degrees of freedom} associated with the chi-squared distribution
+		
+		The sum of squares of $N$ \underline{independent}, zero mean Gaussian variables with unit variance results in a chi-squared random variable with $N$ degrees of freedom
+		
+		Note also that if $x$ is a chi-squared random variable with $\beta$ degrees of freedom, then $(x/2)$ is a gamma random variable with the parameter \newline $c = (\beta/2)$.
+
 	\end{enumerate}
 \end{document}
