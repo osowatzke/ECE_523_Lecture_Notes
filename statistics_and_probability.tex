@@ -421,4 +421,30 @@
 		
 	\end{enumerate}
 	
+	A \underline{complex Gaussian random variable} $z$ is actually made up of two random variables $x$ and $y$ as below.
+	
+	$z = x + jy$
+	
+	$E\{x\} = 0$, $E\{y\} = 0$, $\text{var}\{x\} = (\sigma^2/2)$, $\text{var}\{y\} = (\sigma_y^2/2)$, $\text{cov}(X,Y) = 0$.
+	
+	Of course, $X$ and $Y$ are Gaussian.
+	
+	Then, note that $E\{z\} = 0$, $E\{zz\} = 0$, $E\{z^*z^*\} = 0$ and $E\{zz^*\} = \sigma^2$, where $*$ denotes the complex conjugate.
+	
+	The characteristic function of $\mathcal{N}_M(\boldsymbol{\mu}, \mathbf{\Sigma})$ is
+	
+	$\Phi_\mathbf{x}(\mathbf{u}) = \text{exp}[j\boldsymbol{\mu}^T\boldsymbol{\mu} - \frac{1}{2}\boldsymbol{\mu}^T\mathbf{\Sigma}^{-1}\boldsymbol{\mu}]$
+	
+	Let $\mathbf{X} = \begin{bmatrix}\mathbf{X_1} \\ \mathbf{X_2} \end{bmatrix}$ be distributed as $\mathcal{N}_M(\boldsymbol{\mu},\mathbf{\Sigma})$ with $\boldsymbol{\mu} = \begin{bmatrix} \mathbf{\boldsymbol{\mu}_1} \\ \mathbf{\boldsymbol{\mu}_2} \end{bmatrix}$ and $\mathbf{\Sigma} = \begin{bmatrix} \mathbf{\Sigma_{11}} & \mathbf{\Sigma_{12}} \\ \mathbf{\Sigma_{21}} & \mathbf{\Sigma_{22}} \end{bmatrix}$ and $|\mathbf{\Sigma_22}| > 0$. Then the conditional distribution of $\mathbf{X_1}$, given $\mathbf{X_2} = \mathbf{x_2}$ is also \underline{Gaussian} with mean vector $\mathbf{\boldsymbol{\mu}_1} + \mathbf{\Sigma_{12}}\mathbf{\Sigma_{22}}^{-1}(\mathbf{x_2} - \mathbf{\boldsymbol{\mu}_2})$ and covariance matrix $\mathbf{\Sigma_{11}} - \mathbf{\Sigma_{12}}\mathbf{\Sigma_{22}}^{-1}\mathbf{\Sigma_{21}}$. Note that the covariance matrix does not depend on the conditioning value $\mathbf{x_2}$.
+	
+	If the random vector $\mathbf{X}$ is distributed according to $\mathcal{N}_M(\boldsymbol{\mu},\mathbf{\Sigma})$ with $|\mathbf{\Sigma}| > 0$, then:
+	
+	\begin{enumerate}
+		\item[(i)] $(\mathbf{X} - \boldsymbol{\mu})^T\mathbf{\Sigma}^{-1}(\mathbf{X} - \boldsymbol{\mu})$ is distributed according to a \underline{chi-squared} distribution with $M$ degrees of freedom.
+		
+		\item[(ii)] The $\mathcal{N}_M(\boldsymbol{\mu}, \mathbf{\Sigma})$ assigns probability $(1 - \alpha)$ to the solid ellipsoid \newline $\{\mathbf{X}: (\mathbf{X} - \boldsymbol{\mu})^T\mathbf{\Sigma}^{-1}(\mathbf{X} - \boldsymbol{\mu}) \leq \chi_M^2(\alpha)\}$, where $\chi_M^2(\alpha)$ denotes the upper ($100\alpha$)th percentile of the $\alpha^2$ distributions (chi-squared with $M$ d.o.f.).
+		
+		\underline{Whitening Transform:} Let $\mathbf{x}$ be a M-variate Gaussian with mean $\mathbf{\boldsymbol{\mu}_x}$ and covariance $\mathbf{\Sigma_x}$.
+		
+	\end{enumerate}
 \end{document}
