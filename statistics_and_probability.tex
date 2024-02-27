@@ -444,7 +444,32 @@
 		
 		\item[(ii)] The $\mathcal{N}_M(\boldsymbol{\mu}, \mathbf{\Sigma})$ assigns probability $(1 - \alpha)$ to the solid ellipsoid \newline $\{\mathbf{X}: (\mathbf{X} - \boldsymbol{\mu})^T\mathbf{\Sigma}^{-1}(\mathbf{X} - \boldsymbol{\mu}) \leq \chi_M^2(\alpha)\}$, where $\chi_M^2(\alpha)$ denotes the upper ($100\alpha$)th percentile of the $\alpha^2$ distributions (chi-squared with $M$ d.o.f.).
 		
-		\underline{Whitening Transform:} Let $\mathbf{x}$ be a M-variate Gaussian with mean $\mathbf{\boldsymbol{\mu}_x}$ and covariance $\mathbf{\Sigma_x}$.
-		
 	\end{enumerate}
+	
+	\underline{Whitening Transform:} Let $\mathbf{x}$ be a M-variate Gaussian with mean $\mathbf{\boldsymbol{\mu}_x}$ and covariance $\mathbf{\Sigma_x}$.
+		
+	Let $\mathbf{\Sigma_x}\mathbf{\Phi_j} = \lambda_j\mathbf{\Phi_j}$, $j = 1,2,...,M$.
+	
+	$\mathbf{\Phi_i}^T\mathbf{\Phi_i} = \delta_{ij}$, $1 \leq i,j \leq M$ where
+	
+	\begin{equation*}
+		\delta_{ij} = \begin{cases}
+			1 & \text{for}\ i = j \\
+			0 & \text{for}\ i \neq j
+		\end{cases}
+	\end{equation*}
+	
+	Let $\mathbf{A}$ be a $M \times M$ matrix with the eigenvector $\mathbf{\Phi_i}$ as its ith row.
+	
+	\begin{equation*}
+		A = \begin{bmatrix}\mathbf{\Phi_1}, \mathbf{\Phi_2},...,\mathbf{\Phi_M}\end{bmatrix}^T
+	\end{equation*}
+	
+	Let $\mathbf{Y} = \mathbf{Ax}$. Then $\mathbf{\Sigma_y} = \mathbf{A\Sigma_x}\mathbf{A}^T = \text{Diag}(\lambda_1,\lambda_2,...,\lambda_M)$.
+	
+	Since $\mathbf{\Sigma_y}$ is diagonal, all elements of $\mathbf{Y}$ are \underline{uncorrelated}. Because of the Gaussian pdf, this also implies \underline{statistical independence}.
+	
+	By multiplying the components of $\mathbf{Y}$ by proper scalars, the covariance matrix can be made into an identity matrix. The resulting random variables are statistically independent Gaussian variables of unit variance.
+	
+	This procedure known as the "whitening transform" facilitates the analysis when dealing with multivariate Gaussian distributions.
 \end{document}
